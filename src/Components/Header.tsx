@@ -4,6 +4,7 @@ type PropsType={
 }
 
 export const Header=(props:PropsType)=>{
+
     return(
         <div>{props.title}</div>
     )

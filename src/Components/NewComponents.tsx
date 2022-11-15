@@ -31,9 +31,9 @@ export const NewComponents = (props: NewComponentsType) => {
 
             <table width="100%" cellSpacing="0" border={1}  >
                 {
-                    topCars.map((el)=>{
+                    topCars.map((el,index)=>{
                         return(
-                            <tr >
+                            <tr key={index} >
                                 <th>{el.manufacturer}</th>
                                 <th>{el.model}</th>
                             </tr>
