@@ -1,5 +1,6 @@
 import {NewComponents} from "./NewComponents";
 import {Button} from "./Button";
+import {useState} from "react";
 
 type PropsType={
     title:string
@@ -29,6 +30,13 @@ const foo2=(value:number)=>{
 const subscriberFoo=(subscriber:string)=>{
     console.log(subscriber)
 }
+const [variable,setVariable]=useState(0)
+    const addOneHandler=()=>{
+        setVariable(variable+1)
+    }
+    const resetHandler=()=>{
+        setVariable(0)
+    }
 
     return(
 
@@ -42,6 +50,11 @@ const subscriberFoo=(subscriber:string)=>{
             <button onClick={()=>foo2(100200)}>2</button>
             <Button title={"chanel 1"} callback={()=>subscriberFoo("Vasiliy")}/>
             <Button title={"chanel 2"} callback={()=>subscriberFoo("Ivan")}/>
+            <div>
+                <h1>{variable}</h1>
+                <button onClick={addOneHandler}>add</button>
+                <button onClick={resetHandler}>reset</button>
+            </div>
         </>
 
     )
